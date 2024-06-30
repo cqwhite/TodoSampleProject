@@ -1,0 +1,85 @@
+[
+  {
+    "UID": "44042afc-27bb-4e7d-a942-c7a94274390d",
+    "Description": "Walk the dogs dog",
+    "Status": false,
+    "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+    "MoreDetails": "Walk the dogs for 40 minutes",
+    "SubTasks": [],
+    "IsSubTask": false
+  },
+  {
+    "UID": "49266799-8fd8-43df-aee7-ef3a57617dd9",
+    "Description": "Walk the dogs dog around the world twice",
+    "Status": false,
+    "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+    "MoreDetails": "Walk the dogs for 90 minutes",
+    "SubTasks": [
+      {
+        "UID": "00000000-0000-0000-0000-000000000000",
+        "Description": "Walk purple",
+        "Status": false,
+        "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+        "MoreDetails": "Walk",
+        "SubTasks": [],
+        "IsSubTask": true
+      },
+      {
+        "UID": "00000000-0000-0000-0000-000000000000",
+        "Description": "Walk purple",
+        "Status": false,
+        "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+        "MoreDetails": "Walk",
+        "SubTasks": [],
+        "IsSubTask": true
+      },
+      {
+        "UID": "00000000-0000-0000-0000-000000000000",
+        "Description": "Walk purple",
+        "Status": false,
+        "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+        "MoreDetails": "Walk",
+        "SubTasks": [],
+        "IsSubTask": true
+      }
+    ],
+    "IsSubTask": false
+  },
+  {
+    "UID": "ef8e9e57-b915-408e-a7e9-dfe11b93a9f3",
+    "Description": "Walk the dogs dog around the world twice",
+    "Status": true,
+    "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+    "MoreDetails": "Walk the dogs for 90 minutes",
+    "SubTasks": [
+      {
+        "UID": "00000000-0000-0000-0000-000000000000",
+        "Description": "Walk purple",
+        "Status": true,
+        "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+        "MoreDetails": "Walk",
+        "SubTasks": [],
+        "IsSubTask": true
+      },
+      {
+        "UID": "00000000-0000-0000-0000-000000000000",
+        "Description": "Walk purple",
+        "Status": true,
+        "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+        "MoreDetails": "Walk",
+        "SubTasks": null,
+        "IsSubTask": true
+      },
+      {
+        "UID": "00000000-0000-0000-0000-000000000000",
+        "Description": "Walk purple",
+        "Status": true,
+        "DeadlineDate": "2024-06-30T12:34:56.7891234Z",
+        "MoreDetails": "Walk",
+        "SubTasks": [],
+        "IsSubTask": true
+      }
+    ],
+    "IsSubTask": false
+  }
+]
