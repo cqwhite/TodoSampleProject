@@ -8,7 +8,7 @@ namespace ToDo.Model
         [Required]
         public String Description { get; set; }
         [Required]
-        public bool Status { get; set; }
+        public bool isComplete { get; set; }
         [Required]
         public DateTime? DeadlineDate { get; set; }
         public String? MoreDetails { get; set; }

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.Model;
 using ToDo.Service;
@@ -47,10 +43,6 @@ namespace ToDo.Controller
         [HttpPut("{uid}")]
         public async Task<IActionResult> UpdateTask(Guid uid, [FromBody] TaskItem taskItem)
         {
-            if (uid != taskItem.UID)
-            {
-                return BadRequest();
-            }
             await service.UpdateAsync(taskItem);
             var updatedTask = service.GetByIdAsync(uid);
             return Ok(updatedTask);

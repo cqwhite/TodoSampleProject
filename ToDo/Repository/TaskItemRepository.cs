@@ -56,7 +56,7 @@ namespace ToDo.Repository
             if (existingTaskItem != null)
             {
                 existingTaskItem.Description = taskItem.Description;
-                existingTaskItem.Status = taskItem.Status;
+                existingTaskItem.isComplete = taskItem.isComplete;
                 existingTaskItem.DeadlineDate = taskItem.DeadlineDate;
                 existingTaskItem.MoreDetails = taskItem.MoreDetails;
                 existingTaskItem.SubTasks = taskItem.SubTasks;

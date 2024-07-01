@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ToDo.Model;
 using ToDo.Repository;
 
@@ -64,22 +60,24 @@ namespace ToDo.Service
                     {
                         throw new InvalidOperationException("Subtasks cannot have their own subtasks.");
                     }
-                    if(!subTask.Status) {
+                    if (!subTask.isComplete)
+                    {
                         allSubtasksComplete = false;
                     }
                     subTask.IsSubTask = true;
                 }
-                
-                if (allSubtasksComplete){
-                    taskItem.Status = true;
+
+                if (allSubtasksComplete)
+                {
+                    taskItem.isComplete = true;
                 }
             }
 
-            if (taskItem.Status && taskItem.SubTasks != null && taskItem.SubTasks.Count > 0)
+            if (taskItem.isComplete && taskItem.SubTasks != null && taskItem.SubTasks.Count > 0)
             {
                 foreach (var subTask in taskItem.SubTasks)
                 {
-                    subTask.Status = true;
+                    subTask.isComplete = true;
                 }
             }
 
