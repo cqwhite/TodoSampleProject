@@ -53,6 +53,15 @@ namespace ToDo.Service
 
             if (taskItem.SubTasks != null && taskItem.SubTasks.Count > 0)
             {
+                if (existingTaskItem.isComplete && !taskItem.isComplete)
+                {
+                    foreach (var subTask in taskItem.SubTasks)
+                    {
+                        subTask.isComplete = false;
+                    }
+
+                }
+
                 bool allSubtasksComplete = true;
                 foreach (var subTask in taskItem.SubTasks)
                 {
@@ -63,6 +72,7 @@ namespace ToDo.Service
                     if (!subTask.isComplete)
                     {
                         allSubtasksComplete = false;
+
                     }
                     subTask.IsSubTask = true;
                 }
