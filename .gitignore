@@ -1,2 +1,19 @@
-./bin/*
-./obj/*
+# Ignore build results
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.rsuser
+*.suo
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore Rider settings
+.idea/
+
+# Ignore other common artifacts
+*.log
+*.vs/
+*.swp
