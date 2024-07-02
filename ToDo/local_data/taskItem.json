@@ -5,7 +5,17 @@
     "isComplete": false,
     "DeadlineDate": "2024-06-29T00:00:00",
     "MoreDetails": "outside!",
-    "SubTasks": [],
+    "SubTasks": [
+      {
+        "UID": "c9944532-887e-4c27-ab20-efd2d5da220f",
+        "Description": "Dig a whole",
+        "isComplete": false,
+        "DeadlineDate": "2024-07-02T15:08:50.931Z",
+        "MoreDetails": "with a shovel",
+        "SubTasks": [],
+        "IsSubTask": true
+      }
+    ],
     "IsSubTask": false
   },
   {

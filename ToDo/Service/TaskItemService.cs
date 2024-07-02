@@ -17,6 +17,7 @@ namespace ToDo.Service
             {
                 foreach (var subTask in taskItem.SubTasks)
                 {
+                    //check if a subTask has any subTasks
                     if (subTask.SubTasks != null && subTask.SubTasks.Count > 0)
                     {
                         throw new InvalidOperationException("Subtasks cannot have their own subtasks.");
@@ -46,6 +47,7 @@ namespace ToDo.Service
         {
             TaskItem existingTaskItem = await repository.GetByIdAsync(taskItem.UID);
 
+            //checking if the updated subTask has any subtasks
             if (existingTaskItem.IsSubTask && taskItem.SubTasks != null && taskItem.SubTasks.Count > 0)
             {
                 throw new InvalidOperationException("Subtasks cannot have their own subtasks.");
@@ -53,6 +55,7 @@ namespace ToDo.Service
 
             if (taskItem.SubTasks != null && taskItem.SubTasks.Count > 0)
             {
+                //if the pre updated task is already complete and the updated task is now not complete, make subtasks incomplete as well
                 if (existingTaskItem.isComplete && !taskItem.isComplete)
                 {
                     foreach (var subTask in taskItem.SubTasks)
@@ -62,6 +65,7 @@ namespace ToDo.Service
 
                 }
 
+                //if all subTasks are now complete make the parent task complete
                 bool allSubtasksComplete = true;
                 foreach (var subTask in taskItem.SubTasks)
                 {
@@ -83,12 +87,32 @@ namespace ToDo.Service
                 }
             }
 
+            //if the parent task is now complete make all subTasks complete
             if (taskItem.isComplete && taskItem.SubTasks != null && taskItem.SubTasks.Count > 0)
             {
                 foreach (var subTask in taskItem.SubTasks)
                 {
                     subTask.isComplete = true;
                 }
+            }
+
+            //if the parent task was complete and a subTask is now not, make the parent task incomplete
+            bool subTasksBecameIncomplete = true;
+            if (existingTaskItem.isComplete && taskItem.SubTasks != null && taskItem.SubTasks.Count > 0)
+            {
+                foreach (var subTask in taskItem.SubTasks)
+                {
+                    if (!subTask.isComplete)
+                    {
+                        subTasksBecameIncomplete = false;
+
+                    }
+                }
+                if (subTasksBecameIncomplete)
+                {
+                    taskItem.isComplete = false;
+                }
+
             }
 
             await repository.UpdateAsync(taskItem);
